@@ -1,0 +1,46 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.3'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.noelwon'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// devtools 서버 재시작할 필요없이 수정사항 적용
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	// lombok 적용 
+	compileOnly 'org.projectlombok:lombok' 
+	annotationProcessor 'org.projectlombok:lombok'
+	// mySQL 연결
+	runtimeOnly "com.mysql:mysql-connector-j"
+	// jpa 연결
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	// junit 설치
+	testImplementation 'org.junit.jupiter:junit-jupiter' 
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    // 타임리프 사용
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+    // Spring Boot Validation 사용 (form을 사용할 때 빈 값을 체크하는 것)
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    // 스프링 시큐리티 사용
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

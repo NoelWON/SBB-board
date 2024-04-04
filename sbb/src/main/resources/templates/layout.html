@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+    <title> Hello, Sbb! </title>
+</head>
+
+<body>
+	<!-- 네비게이션바 -->
+	<nav th:replace="~{navbar :: navbarFragment}"></nav>
+    <!-- fragment는 각각 안에 들어갈 내용이 들어갈 block자리이다. -->
+    <th:block layout:fragment="content"></th:block>
+    <!-- Bootstrap JS -->
+    <script th:src="@{/bootstrap.min.js}"></script>
+    <!-- 자바스크립트 Start -->
+    <th:block layout:fragment="script"></th:block>
+</body>
+
+</html>
