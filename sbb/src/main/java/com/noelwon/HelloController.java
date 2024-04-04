@@ -12,6 +12,6 @@ public class HelloController {
 	@ResponseBody
 	public String hello() {
 //		return "hello world";
-		return "hello spring boot brand";
+		return "git test";
 	}
 }
