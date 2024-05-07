@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <div id="root"></div>
+    <script>
+        const rootElement = document.getElementById("root");
+        // const elementV = document.createElement("h1");
+        // elementV.textContent = "hello, world!";
+        const element = React.createElement("h1", { children: "hello, world!!!!" });
+        // rootElement.appendChild(element);
+        // console.log(element)
+        // console.log(elementV);
+        ReactDOM.render(element, rootElement);
+    </script>
+
+
+    <div id="jsx"></div>
+    <!-- jsx 문법 : 문자도HTML 도 아닌 JS확장 문법 https://babeljs.io/ 가 필요함  -->
+    <!-- 바벨은 js 컴파일러이다. -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const jsxElement = document.getElementById("jsx");
+        // const elementj = <h1 className = "title">HELLO WORLD</h1>
+        // ReactDOM.render(elementj, jsxElement);
+        const text = "jsx test";
+        const titleClassName = "title";
+        const customH1 = <h1 className = {titleClassName}>{text}</h1>
+        const cusElement = customH1
+
+        ReactDOM.render(cusElement, jsxElement);
+    </script>
+</body>
+
+</html>
