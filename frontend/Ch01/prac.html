@@ -33,10 +33,45 @@
         // ReactDOM.render(elementj, jsxElement);
         const text = "jsx test";
         const titleClassName = "title";
-        const customH1 = <h1 className = {titleClassName}>{text}</h1>
+        const customH1 = <h1 className={titleClassName}>{text}</h1>
         const cusElement = customH1
 
         ReactDOM.render(cusElement, jsxElement);
+    </script>
+
+    <!-- 여러개의 Element를 넣기 -->
+    <div id="multi">
+        <h1>hi</h1>
+        <h3>bye</h3>
+        <h5>children</h5>
+    </div>
+    <!-- <script type="text/babel">
+        const multiElement = document.getElementById("multi")
+        const mulElement = (
+            <div
+                className="box"
+                children={
+                    [
+                        React.createElement('h1', null, "hihihihi"),
+                        React.createElement('h3', null, "byebyebye"),
+                        React.createElement('h5', null, "fffff"),
+                    ]
+                } />);
+        ReactDOM.render(mulElement, multiElement);
+    </script> -->
+    <!-- React.Fragment 로 div안에 바로 넣어 준다.  -->
+    <script type="text/babel">
+        const multiElement = document.getElementById("multi")
+        const mulElement = (
+            <React.Fragment
+                children={
+                    [
+                        <h1>Hihihihello</h1>,
+                        React.createElement('h3', null, "byebyebye"),
+                        React.createElement('h5', null, "fffff"),
+                    ]
+                } />);
+        ReactDOM.render(mulElement, multiElement);
     </script>
 </body>
 
