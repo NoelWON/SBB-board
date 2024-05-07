@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <div id="root"></div>
+    <!-- 바닐라JS 는 버튼을 새롭게 계속 만듬 -->
+    <!-- <script>
+        const rootElement = document.getElementById("root");
+
+        function random() {
+            const number = Math.floor(Math.random() * (10 - 1) + 1);
+
+            const element = `
+            <button>${number}</button> 
+        `;
+            rootElement.innerHTML = element;
+        }
+
+        random();
+        // 인터벌로 반복시킴
+        setInterval(random,1000);
+    </script> -->
+    <!-- 리액트는 숫자만 바꿔줌 -->
+    <script type="text/babel">
+        const rootElement = document.getElementById("root");
+
+        function random() {
+            const number = Math.floor(Math.random() * (10 - 1) + 1);
+
+            const element =
+                <>
+                    <button>{number}</button>
+                    <br />
+                    <div>
+                        <button>{number}</button>
+                        <p>{number}</p>
+                    </div>
+                </>
+            ReactDOM.render(element, rootElement);
+        }
+        random()
+        setInterval(random, 1000);
+
+    </script>
+</body>
+
+</html>
