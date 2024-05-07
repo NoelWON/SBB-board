@@ -1,2 +1,2 @@
-# SBB-board
+# STUDY
 self study repository
